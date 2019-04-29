@@ -6,7 +6,11 @@
 
     <groupId>learning</groupId>
     <artifactId>jinghui.lin</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>schedule</module>
+    </modules>
 
     <name>jinghui.lin</name>
     <url>http://www.example.com</url>

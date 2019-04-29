@@ -6,13 +6,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="jinghui.lin" />
         <module name="learning" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="demo" target="1.7" />
       <module name="learning" target="8" />
+      <module name="schedule" target="1.6" />
     </bytecodeTargetLevel>
   </component>
 </project>
