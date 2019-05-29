@@ -1,0 +1,22 @@
+/*
+ * Copyright (C), 2005-2019, 深圳市珍爱网信息技术有限公司
+ */
+package learning.design.pattern.methodtemplate;
+
+/**
+ * @Description: TODO
+ * @Author: JingHui Lin
+ * @Date: 2019/5/29 18:00
+ * @Version V1.0
+ */
+public class MyTest {
+
+    public static void main(String[] args) {
+        AbstractShopping shoesShopping = new ShoeShopping();
+        AbstractShopping clothesShopping = new ClothesShopping();
+
+        shoesShopping.buyGoods();
+        System.out.println("-----------------------");
+        clothesShopping.buyGoods();
+    }
+}
