@@ -8,9 +8,6 @@
     <artifactId>jinghui.lin</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
-    <modules>
-        <module>schedule</module>
-    </modules>
 
     <name>jinghui.lin</name>
     <url>http://www.example.com</url>
@@ -24,6 +21,11 @@
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.4</version>
+        </dependency>
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-all</artifactId>
