@@ -25,3 +25,7 @@
 hs_err_pid*
 
 .idea
+*.iml
+target
+learning.iml
+.idea/workspace.xml
