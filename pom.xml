@@ -12,6 +12,7 @@
         <module>mybatis</module>
         <module>program-idea</module>
         <module>others</module>
+        <module>spring</module>
     </modules>
 
     <name>jinghui.lin</name>
@@ -26,6 +27,11 @@
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+            <version>1.2</version>
+        </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>

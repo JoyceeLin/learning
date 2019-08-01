@@ -15,7 +15,7 @@ package learning.schedule;///**
 // * @author xumin
 // * @version $Id:ScheduleTaskDO.java, v0.1 2017/12/19 18:27 xumin
 // */
-//@Entity
+//@entity
 //@Table(name = "schedule_task")
 //public class ScheduleTaskDO implements Serializable {
 //
