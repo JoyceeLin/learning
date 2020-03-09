@@ -49,7 +49,7 @@ public class TimeServer {
     }
 
     public static void main(String[] args) throws Exception {
-        int port=9999;
+        int port = 9999;
         new TimeServer().bind(port);
     }
 }

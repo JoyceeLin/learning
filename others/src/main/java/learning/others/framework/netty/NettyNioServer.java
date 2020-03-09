@@ -24,10 +24,10 @@ public class NettyNioServer {
                 @Override
                 protected void initChannel(Channel channel) throws Exception {
                     channel.pipeline().addLast(new ChannelInboundHandlerAdapter() {
-                      @Override
-                      public void channelActive(ChannelHandlerContext ctx) {
-                          ctx.writeAndFlush(buf.duplicate()).addListener(ChannelFutureListener.CLOSE);
-                      }
+                        @Override
+                        public void channelActive(ChannelHandlerContext ctx) {
+                            ctx.writeAndFlush(buf.duplicate()).addListener(ChannelFutureListener.CLOSE);
+                        }
                     });
                 }
             });

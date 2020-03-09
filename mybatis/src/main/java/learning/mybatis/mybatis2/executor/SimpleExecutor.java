@@ -16,7 +16,7 @@ import java.sql.SQLException;
  * @Date: 2019/7/23 16:22
  * @Version V1.0
  */
-public class SimpleExecutor implements Executor{
+public class SimpleExecutor implements Executor {
 
     private Configuration configuration;
 

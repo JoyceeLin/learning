@@ -9,7 +9,7 @@ package learning.others.basic.reflect;
  * @Date: 2019/4/26 15:08
  * @Version V1.0
  */
-public class Cat implements Animal, Movable{
+public class Cat implements Animal, Movable {
 
     @Override
     public void eat() {

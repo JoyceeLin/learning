@@ -32,6 +32,7 @@ public class MyTest {
 //    }
 
     private static List<IWorkerAdapter> adapters;
+
     public static void main(String[] args) {
         ICooker iCooker = new HmjCooker();
         IProgramer iProgramer = new ZAProgrammer();

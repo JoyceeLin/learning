@@ -11,7 +11,7 @@ import learning.others.design.pattern.decorator.component.Drink;
  * @Date: 2019/4/29 10:13
  * @Version V1.0
  */
-public class Milk extends Decorator{
+public class Milk extends Decorator {
 
     public Milk(Drink drink) {
         super(drink);

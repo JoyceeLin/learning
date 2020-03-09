@@ -25,12 +25,15 @@ public class ExecutorFactory {
         return new SimpleExecutor(config);
     }
 
-    public enum ExecutorType{
-        /** 默认 */
+    public enum ExecutorType {
+        /**
+         * 默认
+         */
         DEFAULT("Simple"),
-        /** 缓存 */
-        CACHING("Cache"),
-        ;
+        /**
+         * 缓存
+         */
+        CACHING("Cache"),;
         private String name;
 
         ExecutorType(String name) {

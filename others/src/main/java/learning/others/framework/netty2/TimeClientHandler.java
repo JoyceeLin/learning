@@ -26,11 +26,13 @@ public class TimeClientHandler extends ChannelHandlerAdapter {
         firstMessage = Unpooled.buffer(req.length);
         firstMessage.writeBytes(req);
     }
+
     //客户端和服务端TCP链路建立成功后调用此方法
     public void channelActive(ChannelHandlerContext ctx) {
         //通过此方法将消息发送给服务端
         ctx.writeAndFlush(firstMessage);
     }
+
     //服务端返回应答消息调用此方法
     public void channelRead(ChannelHandlerContext ctx, Object msg)
             throws Exception {

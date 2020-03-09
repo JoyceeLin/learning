@@ -56,7 +56,7 @@ public class GenericExtends4 {
     }
 
     /**
-     *  为了保证向下兼容的一致性，不能添加元素
+     * 为了保证向下兼容的一致性，不能添加元素
      */
     public static void add(List<? extends Fruit> list) {
         // 不能往里面加这样的对象 不能用于添加数据

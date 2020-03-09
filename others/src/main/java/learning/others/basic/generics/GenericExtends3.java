@@ -12,7 +12,8 @@ import java.util.Arrays;
  * @Version V1.0
  */
 public class GenericExtends3 {// seems like ArrayList
-    private static class DynamicArray<E>{
+
+    private static class DynamicArray<E> {
 
         private static final int DEFAULT_CAPACITY = 10;
         private int size;
@@ -21,7 +22,8 @@ public class GenericExtends3 {// seems like ArrayList
         public DynamicArray() {
             this.data = new Object[DEFAULT_CAPACITY];
         }
-        private void ensureCapacity(int minCapacity){
+
+        private void ensureCapacity(int minCapacity) {
             int oldCapacity = data.length;
             if (oldCapacity >= minCapacity) {
                 return;
@@ -33,27 +35,27 @@ public class GenericExtends3 {// seems like ArrayList
             data = Arrays.copyOf(data, newCapacity);
         }
 
-        public void add(E e){
+        public void add(E e) {
             ensureCapacity(size + 1);
             data[size++] = e;
         }
 
-        public E get(int index){
-            return (E)data[index];
+        public E get(int index) {
+            return (E) data[index];
         }
 
-        public int size(){
+        public int size() {
             return size;
         }
 
-        public E set(int index, E e){
+        public E set(int index, E e) {
             E oldValue = get(index);
             data[index] = e;
             return oldValue;
         }
 
-        public <T extends E>void addAll(DynamicArray<T>arr){
-            for(int i = 0; i < arr.size; i++){
+        public <T extends E> void addAll(DynamicArray<T> arr) {
+            for (int i = 0; i < arr.size; i++) {
                 add(arr.get(i));
             }
         }
@@ -84,7 +86,7 @@ public class GenericExtends3 {// seems like ArrayList
     }
 
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
     }
 }

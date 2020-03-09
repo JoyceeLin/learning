@@ -18,103 +18,104 @@ import java.util.Properties;
  */
 public class PropertiesUtil {
 
-	private static Logger logger = LoggerFactory.getLogger(PropertiesUtil.class);
+    private static Logger logger = LoggerFactory.getLogger(PropertiesUtil.class);
 
-	private static final String CONFIG_FILE = "mq.properties";
+    private static final String CONFIG_FILE = "mq.properties";
 
-	private static PropertiesUtil config = null;
+    private static PropertiesUtil config = null;
 
-	private Properties properties = new Properties();
+    private Properties properties = new Properties();
 
-	private long lastModified;
+    private long lastModified;
 
-	private PropertiesUtil() {
-		this.monitorFileChanged();
-	}
+    private PropertiesUtil() {
+        this.monitorFileChanged();
+    }
 
-	/**
-	 * 监控属性文件发生变化
-	 */
-	private void monitorFileChanged() {
-		// 配置文件config.properties路径
-		URL url  = Thread.currentThread().getContextClassLoader().getResource(CONFIG_FILE);
-		final File file = new File(url.getFile());
+    /**
+     * 监控属性文件发生变化
+     */
+    private void monitorFileChanged() {
+        // 配置文件config.properties路径
+        URL url = Thread.currentThread().getContextClassLoader().getResource(CONFIG_FILE);
+        final File file = new File(url.getFile());
 
-		loadConfig(file);
+        loadConfig(file);
 
-		Thread monitorFileChangedThread = new Thread("fileChangedMonitorThread"){
-			@Override
-			public void run() {
-				while (true) {
-					try {
-						if (file.lastModified() > PropertiesUtil.this.lastModified) {
-							// 初始化属性文件
-							loadConfig(file);
-						}
-						logger.info("File changed monitor.");
-					} catch (Exception e) {
-						logger.error("", e);
-					}
+        Thread monitorFileChangedThread = new Thread("fileChangedMonitorThread") {
+            @Override
+            public void run() {
+                while (true) {
+                    try {
+                        if (file.lastModified() > PropertiesUtil.this.lastModified) {
+                            // 初始化属性文件
+                            loadConfig(file);
+                        }
+                        logger.info("File changed monitor.");
+                    } catch (Exception e) {
+                        logger.error("", e);
+                    }
 
-					try {
-						Thread.sleep(1800000);//30分钟
-					} catch (Exception e) {
-						logger.error("", e);
-					}
-				}
-			}
-		};
-		monitorFileChangedThread.start();
-	}
+                    try {
+                        Thread.sleep(1800000);//30分钟
+                    } catch (Exception e) {
+                        logger.error("", e);
+                    }
+                }
+            }
+        };
+        monitorFileChangedThread.start();
+    }
 
 
-	private void loadConfig(File file) {
-		PropertiesUtil.this.initProperties();
+    private void loadConfig(File file) {
+        PropertiesUtil.this.initProperties();
 
-		PropertiesUtil.this.lastModified = file.lastModified();
+        PropertiesUtil.this.lastModified = file.lastModified();
 
-		logger.info("file changed.");
-	}
-	/**
-	 * 初始化属性文件
-	 */
-	private void initProperties() {
-		InputStream inStream = this.getClass().getClassLoader().getResourceAsStream(CONFIG_FILE);
-		if(inStream == null){
-			logger.error("根目录下找不到config.properties文件");
-			return;
-		}
-		try {
-			properties.load(inStream);
-			inStream.close();
-		} catch (IOException e) {
-			logger.error("", e);
-		}
-		logger.info("load mq.properties success.");
-	}
+        logger.info("file changed.");
+    }
 
-	public static PropertiesUtil getInstance(){
-		if (config == null) {
-			synchronized (PropertiesUtil.class) {
-				PropertiesUtil tmp = config;
-				if (tmp == null) {
-					tmp = new PropertiesUtil();
-					config = tmp;
-				}
-			}
-		}
-		return config;
-	}
+    /**
+     * 初始化属性文件
+     */
+    private void initProperties() {
+        InputStream inStream = this.getClass().getClassLoader().getResourceAsStream(CONFIG_FILE);
+        if (inStream == null) {
+            logger.error("根目录下找不到config.properties文件");
+            return;
+        }
+        try {
+            properties.load(inStream);
+            inStream.close();
+        } catch (IOException e) {
+            logger.error("", e);
+        }
+        logger.info("load mq.properties success.");
+    }
 
-	public String getValue(String key) {
-        return getValue(key,"");
-	}
+    public static PropertiesUtil getInstance() {
+        if (config == null) {
+            synchronized (PropertiesUtil.class) {
+                PropertiesUtil tmp = config;
+                if (tmp == null) {
+                    tmp = new PropertiesUtil();
+                    config = tmp;
+                }
+            }
+        }
+        return config;
+    }
 
-    public String getValue(String key, String defaultValue){
-        if(StringUtils.isBlank(key)){
+    public String getValue(String key) {
+        return getValue(key, "");
+    }
+
+    public String getValue(String key, String defaultValue) {
+        if (StringUtils.isBlank(key)) {
             return null;
         }
-        String value = properties.getProperty(key,defaultValue);
+        String value = properties.getProperty(key, defaultValue);
         return value;
     }
 }

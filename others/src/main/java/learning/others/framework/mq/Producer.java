@@ -24,7 +24,7 @@ public class Producer {
         init();
     }
 
-    private void init(){
+    private void init() {
         producer.setProducerGroup(groupName);
         producer.setNamesrvAddr(nameServer);
         producer.setInstanceName(RunTimeUtil.getRocketMqUniqueInstanceName());
@@ -35,7 +35,7 @@ public class Producer {
         }
     }
 
-    public synchronized void sendMessage(String saleCase){
+    public synchronized void sendMessage(String saleCase) {
         final Message mq = new Message(topic, "allocation", ObjectToByteUtil.objectToByteArray(saleCase));
         mq.setDelayTimeLevel(9);
         try {
@@ -55,7 +55,7 @@ public class Producer {
         }
     }
 
-    public void shutdown(){
+    public void shutdown() {
         producer.shutdown();
     }
 

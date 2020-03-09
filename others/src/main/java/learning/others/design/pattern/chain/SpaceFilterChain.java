@@ -20,11 +20,11 @@ public class SpaceFilterChain implements Chain {
 
     @Override
     public String handle(String request) {
-        if(request.contains(" ")){
+        if (request.contains(" ")) {
             request = request.replace(" ", "");
         }
         // 链式处理完
-        if(nextChain != null) {
+        if (nextChain != null) {
             request = nextChain.handle(request);
         }
         return request;

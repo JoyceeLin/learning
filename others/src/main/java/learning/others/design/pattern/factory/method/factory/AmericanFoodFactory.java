@@ -19,8 +19,7 @@ public class AmericanFoodFactory implements FoodFactory {
     public Food makeFood(String name) {
         if ("A".equals(name)) {
             return new AmericanFoodA();
-        }
-        else if ("B".equals(name)) {
+        } else if ("B".equals(name)) {
             return new AmericanFoodB();
         } else {
             return null;

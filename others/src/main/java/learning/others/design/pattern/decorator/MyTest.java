@@ -18,6 +18,7 @@ public class MyTest {
 
     /**
      * 装饰者模式，例子：Java的IO
+     *
      * @param args
      */
 

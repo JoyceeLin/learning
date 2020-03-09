@@ -20,7 +20,7 @@ public class EchoServer {
         this.port = port;
     }
 
-    public void start() throws Exception{
+    public void start() throws Exception {
         EventLoopGroup group = new NioEventLoopGroup();
         try {
             ServerBootstrap serverBootstrap = new ServerBootstrap();
@@ -38,7 +38,7 @@ public class EchoServer {
         }
     }
 
-    public static void main(String[] args) throws Exception{
+    public static void main(String[] args) throws Exception {
         new EchoServer(8080).start();
     }
 }

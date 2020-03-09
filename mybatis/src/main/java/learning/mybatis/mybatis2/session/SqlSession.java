@@ -29,7 +29,7 @@ public class SqlSession {
     }
 
     public Configuration getConfiguration() {
-        return  configuration;
+        return configuration;
     }
 
     public <T> T selectOne(MapperRepository.MapperData mapperData, Object parameter) throws SQLException, NoSuchMethodException, IllegalAccessException, InvocationTargetException {

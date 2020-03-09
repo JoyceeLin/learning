@@ -8,6 +8,7 @@ public interface BeanFactory {
 
     /**
      * 通过name 获取bean
+     *
      * @param name bean名
      * @return 对象
      * @throws Exception 异常信息

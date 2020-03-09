@@ -15,9 +15,13 @@ import java.lang.reflect.Proxy;
  */
 public class DyncProxyHello1 implements InvocationHandler {
 
-    /** 调用对象 */
+    /**
+     * 调用对象
+     */
     private Object proxy;
-    /** 目标对象 */
+    /**
+     * 目标对象
+     */
     private Object target;
 
     public Object bind(Object target, Object proxy) {

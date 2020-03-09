@@ -9,6 +9,6 @@ public class MapperXml {
     public static final Map<String, String> methodSqlMapping = new HashMap<String, String>();
 
     static {
-        methodSqlMapping.put("selectByPrimaryKey", "select * from test where id = %d");
+        methodSqlMapping.put("selectByPrimaryKey", "select * from leetcode where id = %d");
     }
 }

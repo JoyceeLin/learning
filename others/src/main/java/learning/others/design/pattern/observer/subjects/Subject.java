@@ -16,12 +16,14 @@ public interface Subject {
 
     /**
      * 注册
+     *
      * @param o 观察者
      */
     void registerObservers(Observer o);
 
     /**
      * 注销
+     *
      * @param o 观察者
      */
     void removeObservers(Observer o);

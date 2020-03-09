@@ -76,7 +76,7 @@ public class ListSort<E> {
     }
 }
 
-class Student{
+class Student {
 
     private int age;
 
@@ -97,9 +97,10 @@ class Student{
     public void setAge(int age) {
         this.age = age;
     }
+
     @Override
     public String toString() {
-        return getAge()+"";
+        return getAge() + "";
     }
 
     public static void main(String[] args) {

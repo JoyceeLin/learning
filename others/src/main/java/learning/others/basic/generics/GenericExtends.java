@@ -15,10 +15,12 @@ public class GenericExtends {
         public NumberPair(U key, V value) {
             super(key, value);
         }
+
         public double geSum() {
             return getFirst().doubleValue() + getSecond().intValue();
         }
     }
+
     public static void main(String[] args) {
         NumberPair<Double, java.lang.Integer> np = new NumberPair<>(3.3, 3);
         System.out.println(np.getFirst());

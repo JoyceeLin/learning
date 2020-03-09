@@ -14,7 +14,7 @@ public class PlainOioServer {
     public void server(int port) throws Exception {
         final ServerSocket socket = new ServerSocket(port);
         try {
-            while(true) {
+            while (true) {
                 final Socket clientSocket = socket.accept();
                 System.out.println("Accepted connection from " + clientSocket);
                 new Thread(new Runnable() {

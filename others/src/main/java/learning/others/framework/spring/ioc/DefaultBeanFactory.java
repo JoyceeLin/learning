@@ -9,7 +9,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * @Author Lin JingHui
  * @Date 2019/1/16
  */
-public class DefaultBeanFactory implements BeanFactory, BeanDefinitionRegistry{
+public class DefaultBeanFactory implements BeanFactory, BeanDefinitionRegistry {
 
     private Map<String, Object> beanMap = new ConcurrentHashMap<>();
 
@@ -43,7 +43,7 @@ public class DefaultBeanFactory implements BeanFactory, BeanDefinitionRegistry{
         return doGetBean(name);
     }
 
-    private Object doGetBean(String beanName) throws Exception{
+    private Object doGetBean(String beanName) throws Exception {
         Objects.requireNonNull(beanName, "beanName不能为空");
         Object instance = beanMap.get(beanName);
         // 如果bean存在，则返回

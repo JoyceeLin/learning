@@ -18,17 +18,18 @@ public class Consumer {
     private static String nameServerAddress = PropertiesUtil.getInstance().getValue("mq.rocket.consumer.namesrvAddr");
     private static MessageListenerConcurrently translationListener = SpringContextUtil.getBean("allocateListener");
 
-    public Consumer() {}
+    public Consumer() {
+    }
 
     static {
         try {
             init();
         } catch (Exception e) {
-            LOGGER.error("init mq consumer error",e);
+            LOGGER.error("init mq consumer error", e);
         }
     }
 
-    private static void init() throws Exception{
+    private static void init() throws Exception {
         consumer = new DefaultMQPushConsumer(groupName);
         consumer.setNamesrvAddr(nameServerAddress);
         consumer.setVipChannelEnabled(false);
@@ -36,14 +37,14 @@ public class Consumer {
         consumer.registerMessageListener(translationListener);
     }
 
-    public static void start() throws Exception{
-        if(consumer == null){
+    public static void start() throws Exception {
+        if (consumer == null) {
             init();
         }
         consumer.start();
     }
 
-    public static void shutdown(){
+    public static void shutdown() {
         consumer.shutdown();
     }
 

@@ -7,6 +7,7 @@ package learning.others.basic.inheritance;
 public class TestInheritance {
 
     private static Father father;
+
     static {
         father = new Son();
     }

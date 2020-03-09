@@ -8,6 +8,7 @@ public interface BeanDefinitionRegistry {
 
     /**
      * 注册bean
+     *
      * @param beanName
      * @param beanDefinition
      * @throws Exception
@@ -16,6 +17,7 @@ public interface BeanDefinitionRegistry {
 
     /**
      * 获取bean定义
+     *
      * @param beanName
      * @return
      */
@@ -23,6 +25,7 @@ public interface BeanDefinitionRegistry {
 
     /**
      * 是否已经定义了bean
+     *
      * @param beanName
      * @return
      */

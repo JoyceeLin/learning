@@ -16,7 +16,7 @@ public class Dog implements Animal, Movable {
     private int age;
 
     /**
-     *  公共属性
+     * 公共属性
      */
     public String desc;
 
@@ -25,14 +25,14 @@ public class Dog implements Animal, Movable {
     }
 
     /**
-     *  私有方法
+     * 私有方法
      */
     private Dog(String name) {
         this.name = name;
     }
 
     /**
-     *  三个参数的构造方法
+     * 三个参数的构造方法
      */
     public Dog(int id, String name, int age) {
         this.id = id;
@@ -57,18 +57,18 @@ public class Dog implements Animal, Movable {
     }
 
     /**
-     *  两个私有方法
+     * 两个私有方法
      */
     private void privateMethod() {
         System.out.println(" private method...");
     }
 
     private void privateMethod2(String name) {
-        System.out.println(" private method2..."+name);
+        System.out.println(" private method2..." + name);
     }
 
     /**
-     *  一个静态方法
+     * 一个静态方法
      */
     public static void staticMethod() {
         System.out.println("static method ...");

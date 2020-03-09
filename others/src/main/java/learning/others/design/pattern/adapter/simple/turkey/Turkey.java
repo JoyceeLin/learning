@@ -12,5 +12,6 @@ package learning.others.design.pattern.adapter.simple.turkey;
 public interface Turkey {
 
     void gobble();
+
     void fly();
 }

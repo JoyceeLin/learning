@@ -11,5 +11,6 @@ package learning.others.basic.generics;
  */
 public interface Comparable<T> {
     int compareTo(T o);
+
     boolean equals(Object obj);
 }

@@ -6,7 +6,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="java8" />
         <module name="juc" />
+        <module name="jvm" />
+        <module name="maven" />
         <module name="mybatis" />
         <module name="others" />
         <module name="spring" />
