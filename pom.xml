@@ -18,6 +18,7 @@
         <module>jvm</module>
         <module>maven</module>
         <module>leetcode</module>
+        <module>jdk</module>
     </modules>
 
     <name>jinghui.lin</name>
