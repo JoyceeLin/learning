@@ -1,6 +1,4 @@
-/*
- * Copyright (C), 2005-2020, 深圳市珍爱网信息技术有限公司
- */
+
 package com.java.sort;
 
 import java.util.Arrays;

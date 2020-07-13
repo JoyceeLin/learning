@@ -1,6 +1,4 @@
-/*
- * Copyright (C), 2005-2020, 深圳市珍爱网信息技术有限公司
- */
+
 package learning.spring.aop.test;
 
 import org.aspectj.lang.annotation.AfterReturning;
