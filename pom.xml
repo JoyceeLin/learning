@@ -21,6 +21,7 @@
         <module>jdk</module>
         <module>springboot</module>
         <module>springboot-starter</module>
+        <module>guava</module>
     </modules>
 
     <name>jinghui.lin</name>
